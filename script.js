@@ -5,22 +5,39 @@ const computerImage = document.querySelector('#computer');
 
 const title = document.querySelector('.result__title');
 const subtitle = document.querySelector('.result__subtitle');
-function game() {
-   buttons.forEach((button) => button.addEventListener('click', function() {
-      const personSelection = button.getAttribute('id');
-      const computerSelection = computerPlay();
-      personImage.innerHTML =
-      `<img src="img/${personSelection}.png" alt="${personSelection}" height="50">`; //Display person's selection image
-      computerImage.innerHTML =
-      `<img src="img/${computerSelection}.png" alt="${computerSelection}" height="50">`; //Display computer's selection image
+const personDisplayedScore = document.querySelector('#person-score');
+const computerDisplayedScore = document.querySelector('#computer-score');
 
-      let round = playRound(personSelection, computerSelection);
-      title.textContent = round[0];
-      subtitle.textContent = round[1];
-   }));
-}
+let personScore = 0, computerScore = 0;
 
-game();
+buttons.forEach((button) => button.addEventListener('click', function() {
+   if (personScore == 5 || computerScore == 5) return;
+
+   const personSelection = button.getAttribute('id');
+   const computerSelection = computerPlay();
+   personImage.innerHTML =
+   `<img src="img/${personSelection}.png" alt="${personSelection}" height="50">`; //Display person's selection image
+   computerImage.innerHTML =
+   `<img src="img/${computerSelection}.png" alt="${computerSelection}" height="50">`; //Display computer's selection image
+
+   let round = playRound(personSelection, computerSelection);
+   title.textContent = round[0];
+   subtitle.textContent = round[1];
+
+   if (round[0] == 'You won!') personScore++;
+   if (round[0] == 'You lost!') computerScore++;
+
+   personDisplayedScore.textContent = personScore;
+   computerDisplayedScore.textContent = computerScore;
+
+   if (personScore == 5) {
+      title.textContent = 'Congratulations!!!';
+      subtitle.textContent = 'You defeated Computer';
+   } else if (computerScore == 5) {
+      title.textContent = 'Sorry(';
+      subtitle.textContent = 'Computer was stronger';
+   }
+}));
 
 function computerPlay() {
    let computerChoice = Math.floor(Math.random() * 3);
@@ -43,26 +60,3 @@ function playRound(playerSelection, computerSelection) {
       else return ['You won!', 'Scissors beat Paper'];
    } 
 }
-
-
-// function game() {
-
-//    let playerScore = 0, computerScore = 0;
-
-//    for (let i = 0; i < 5; i++) {
-//       playerSelection = prompt('Choose one Symbol (Rock, Paper, Scissors)', '');
-//       while (playerSelection.toLowerCase() !== 'rock' && playerSelection.toLowerCase() !== 'paper' && playerSelection.toLowerCase() !== 'scissors') {
-//          playerSelection = prompt('Please, choose one Symbol only from this list (Rock, Paper, Scissors)', '');
-//       }
-//       computerSelection = computerPlay();
-//       let round = playRound(playerSelection, computerSelection);
-//       if (round.includes('You won')) playerScore++;
-//       if (round.includes('You lost')) computerScore++;
-//       alert(`You choose "${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()}"\nComputer choose "${computerSelection}"\n${round}\nYour Score: ${playerScore}\nComputer Score: ${computerScore}`);
-//    }
-
-//    if (playerScore > computerScore) alert('Congratulations! You defeated Computer');
-//    else if (playerScore < computerScore) alert('Sorry( Computer was stronger');
-//    else alert('Tie! Friendship won!');
-// }
-// game()
