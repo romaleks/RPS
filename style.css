@@ -1,0 +1,67 @@
+body {
+   margin: 0;
+   font-family: 'Amatic SC', cursive;
+   background: url('img/paper-bg.jpg') center / cover;
+}
+/* HEADER */
+.header {
+   text-align: center;
+   padding: 20px 0;
+}
+.header__title {
+   margin: 0;
+   font-size: 72px;
+}
+/* CONTENT */
+.content {
+   padding: 10px 0;
+}
+.content__fight {
+   max-width: 1100px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: space-between;
+}
+.content__player {
+}
+.player {
+   display: flex;
+   align-items: center;
+}
+.player__content {
+   text-align: center;
+}
+.player__name {
+   font-size: 46px;
+   margin: 0px 0px 5px 0px;
+   font-weight: bold;
+}
+.player__img {
+}
+.player__score {
+   font-size: 150px;
+   margin: 0 30px;
+}
+.content__selection{
+   padding: 70px 0;
+   max-width: 1100px;
+   margin: 0 auto;
+   text-align: center;
+}
+.content__title{
+   font-size: 56px;
+   margin: 0px 0px 25px 0px;
+}
+.content__row {
+   display: flex;
+   justify-content: space-between;
+}
+.content__item {
+   transition: all .2s ease;
+}
+.content__item:hover {
+   transform: scale(1.1);
+}
+.content__item:active {
+   transform: scale(1);
+}

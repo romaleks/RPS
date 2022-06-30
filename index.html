@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Rock Paper Scissors</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+   <header class="header">
+      <h1 class="header__title">Rock Paper Scissors</h1>
+   </header>
+   <div class="content">
+      <div class="content__fight">
+         <div class="content__player player">
+            <div class="player__content">
+               <div class="player__name">username</div>
+               <div class="player__img"><img src="img/person.png" alt="Player" height="150"></div>
+            </div>
+            <div class="player__score">0</div>
+            <div class="player__choice"></div>
+         </div>
+         <div class="content__player player">
+            <div class="player__choice"></div>
+            <div class="player__score">0</div>
+            <div class="player__content">
+               <div class="player__name">computer</div>
+               <div class="player__img"><img src="img/computer.png" alt="Computer" height="150"></div>
+            </div>
+         </div>
+      </div>
+      <div class="content__selection">
+         <div class="content__title">Choose one Symbol</div>
+         <div class="content__row">
+            <div class="content__item">
+               <img src="img/rock.png" alt="rock" height="200">
+            </div>
+            <div class="content__item">
+               <img src="img/paper.png" alt="paper" height="200">
+            </div>
+            <div class="content__item">
+               <img src="img/scissors.png" alt="scissors" height="200" width="300">
+            </div>
+         </div>
+      </div>
+   </div>
+
    <script src="script.js"></script>
 </body>
+
 </html>

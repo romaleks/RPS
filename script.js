@@ -20,24 +20,24 @@ function playRound(playerSelection, computerSelection) {
    } 
 }
 
-function game() {
+// function game() {
 
-   let playerScore = 0, computerScore = 0;
+//    let playerScore = 0, computerScore = 0;
 
-   for (let i = 0; i < 5; i++) {
-      playerSelection = prompt('Choose one Symbol (Rock, Paper, Scissors)', '');
-      while (playerSelection.toLowerCase() !== 'rock' && playerSelection.toLowerCase() !== 'paper' && playerSelection.toLowerCase() !== 'scissors') {
-         playerSelection = prompt('Please, choose one Symbol only from this list (Rock, Paper, Scissors)', '');
-      }
-      computerSelection = computerPlay();
-      let round = playRound(playerSelection, computerSelection);
-      if (round.includes('You won')) playerScore++;
-      if (round.includes('You lost')) computerScore++;
-      alert(`You choose "${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()}"\nComputer choose "${computerSelection}"\n${round}\nYour Score: ${playerScore}\nComputer Score: ${computerScore}`);
-   }
+//    for (let i = 0; i < 5; i++) {
+//       playerSelection = prompt('Choose one Symbol (Rock, Paper, Scissors)', '');
+//       while (playerSelection.toLowerCase() !== 'rock' && playerSelection.toLowerCase() !== 'paper' && playerSelection.toLowerCase() !== 'scissors') {
+//          playerSelection = prompt('Please, choose one Symbol only from this list (Rock, Paper, Scissors)', '');
+//       }
+//       computerSelection = computerPlay();
+//       let round = playRound(playerSelection, computerSelection);
+//       if (round.includes('You won')) playerScore++;
+//       if (round.includes('You lost')) computerScore++;
+//       alert(`You choose "${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase()}"\nComputer choose "${computerSelection}"\n${round}\nYour Score: ${playerScore}\nComputer Score: ${computerScore}`);
+//    }
 
-   if (playerScore > computerScore) alert('Congratulations! You defeated Computer');
-   else if (playerScore < computerScore) alert('Sorry( Computer was stronger');
-   else alert('Tie! Friendship won!');
-}
-game()
+//    if (playerScore > computerScore) alert('Congratulations! You defeated Computer');
+//    else if (playerScore < computerScore) alert('Sorry( Computer was stronger');
+//    else alert('Tie! Friendship won!');
+// }
+// game()
