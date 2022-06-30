@@ -21,6 +21,7 @@ body {
    margin: 0 auto;
    display: flex;
    justify-content: space-between;
+
 }
 .content__player {
 }
@@ -41,6 +42,18 @@ body {
 .player__score {
    font-size: 150px;
    margin: 0 30px;
+}
+.content__result {
+   max-width: 300px;
+}
+.result {
+   text-align: center;
+}
+.result__title {
+   font-size: 56px;
+}
+.result__subtitle {
+   font-size: 32px;
 }
 .content__selection{
    padding: 70px 0;
