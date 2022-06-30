@@ -1,7 +1,31 @@
+const buttons = document.querySelectorAll('.content__item');
+
+const personImage = document.querySelector('#person');
+const computerImage = document.querySelector('#computer');
+
+const title = document.querySelector('.result__title');
+const subtitle = document.querySelector('.result__subtitle');
+function game() {
+   buttons.forEach((button) => button.addEventListener('click', function() {
+      const personSelection = button.getAttribute('id');
+      const computerSelection = computerPlay();
+      personImage.innerHTML =
+      `<img src="img/${personSelection}.png" alt="${personSelection}" height="50">`; //Display person's selection image
+      computerImage.innerHTML =
+      `<img src="img/${computerSelection}.png" alt="${computerSelection}" height="50">`; //Display computer's selection image
+
+      let round = playRound(personSelection, computerSelection);
+      title.textContent = round[0];
+      subtitle.textContent = round[1];
+   }));
+}
+
+game();
+
 function computerPlay() {
    let computerChoice = Math.floor(Math.random() * 3);
-   return (computerChoice === 0) ? 'Rock' :
-      (computerChoice === 1) ? 'Paper' : 'Scissors';
+   return (computerChoice === 0) ? 'rock' :
+      (computerChoice === 1) ? 'paper' : 'scissors';
 }
 
 function playRound(playerSelection, computerSelection) {
