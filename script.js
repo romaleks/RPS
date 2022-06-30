@@ -1,3 +1,6 @@
+const userName = document.querySelector('.player__name');
+userName.textContent = prompt('Please, enter your name', '')
+
 const buttons = document.querySelectorAll('.content__item');
 
 const personImage = document.querySelector('#person');
